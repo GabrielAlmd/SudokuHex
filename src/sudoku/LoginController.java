@@ -47,8 +47,7 @@ public class LoginController implements Initializable {
     private PasswordField r_cpassword; //cpass registo
     @FXML
     private Label erro2; //lb1 registo
-    @FXML
-    private Label sucess; //lb2 registo
+    
    
     
     
@@ -76,7 +75,6 @@ public class LoginController implements Initializable {
     private void handleButtonRegister(ActionEvent event) {
         if(!r_password.getText().isEmpty() && !r_cpassword.getText().isEmpty() && !r_user.getText().isEmpty()){
             if(!checkPassEqual( r_password.getText(), r_cpassword.getText())){
-                r_user.clear();
                 r_password.clear();
                 r_cpassword.clear();
                 erro2.setText("Password don't match!");
@@ -86,7 +84,7 @@ public class LoginController implements Initializable {
                     r_user.clear();
                     r_password.clear();
                     r_cpassword.clear();
-                    sucess.setText("Success!!");
+                    erro2.setText("Success!!");
                 }
             }
         }
