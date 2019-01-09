@@ -6,6 +6,7 @@
 package sudoku;
 
 import java.io.IOException;
+import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -27,6 +28,12 @@ public class PlayController implements Initializable {
 
     DBHelper db = new DBHelper();
     
+    static int sec = 0;
+    
+    static int min = 0;
+    
+    static boolean state = true;
+    
     @FXML
     private Label erro; //lb login
     
@@ -42,7 +49,18 @@ public class PlayController implements Initializable {
     @FXML
     private Button limpar; //bt clear board
     
+    @FXML
+    private Label minutos;
+    
+    @FXML
+    private Label segundos;
+    
    
+    
+    @FXML
+    private void handleButtonPause(ActionEvent event) throws IOException {
+   
+    }
    
     @FXML
     private void handleButtonGiveup(ActionEvent event) throws IOException {
@@ -51,7 +69,7 @@ public class PlayController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
-    
+  
     
     
     @Override
@@ -59,8 +77,9 @@ public class PlayController implements Initializable {
         db.connect();
         db.create();
         db.createTables();
+
         
-           
+        
     }    
     
 }

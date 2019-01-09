@@ -58,7 +58,7 @@ public class LoginController implements Initializable {
     @FXML
     private void handleButtonCkUser(ActionEvent event) throws IOException {
        if(!user.getText().isEmpty() && !password.getText().isEmpty()){
-            if(db.logIn(user.getText().toString(), password.getText().toString())){
+            if(db.logIn(user.getText(), password.getText())){
                 
                 Parent root = FXMLLoader.load(getClass().getResource("Main.fxml")); //muda para a proxima janela
                 Node node = (Node) event.getSource();
@@ -80,7 +80,7 @@ public class LoginController implements Initializable {
                 erro2.setText("Password don't match!");
             }
             else{
-                if(db.insertPlayer(r_user.getText().toString(),r_password.getText().toString())){
+                if(db.insertPlayer(r_user.getText(),r_password.getText().toString())){
                     r_user.clear();
                     r_password.clear();
                     r_cpassword.clear();
