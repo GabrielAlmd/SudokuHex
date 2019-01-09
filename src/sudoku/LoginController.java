@@ -76,10 +76,16 @@ public class LoginController implements Initializable {
     private void handleButtonRegister(ActionEvent event) {
         if(!r_password.getText().isEmpty() && !r_cpassword.getText().isEmpty() && !r_user.getText().isEmpty()){
             if(!checkPassEqual( r_password.getText(), r_cpassword.getText())){
+                r_user.clear();
+                r_password.clear();
+                r_cpassword.clear();
                 erro2.setText("Password don't match!");
             }
             else{
                 if(db.insertPlayer(r_user.getText().toString(),r_password.getText().toString())){
+                    r_user.clear();
+                    r_password.clear();
+                    r_cpassword.clear();
                     sucess.setText("Success!!");
                 }
             }
