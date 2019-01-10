@@ -6,7 +6,6 @@
 package sudoku;
 
 import java.io.IOException;
-import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;

@@ -66,7 +66,7 @@ public class LoginController implements Initializable {
                 stage.setScene(new Scene(root));
                 
             } else
-                erro.setText("Wrong user or pass!!\nRegist frist.");
+                erro.setText("Wrong user or pass!!\nTry registering first.");
         } else
             erro.setText("Fill all camps!");
     }
