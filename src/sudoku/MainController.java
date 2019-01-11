@@ -32,7 +32,7 @@ public class MainController implements Initializable {
     DBHelper db = new DBHelper();
     
     @FXML
-    private Label player; //lb login
+    private Label playerName; //lb login
     
     @FXML
     private Button play;
@@ -44,6 +44,7 @@ public class MainController implements Initializable {
     @FXML
     private ChoiceBox<String> nivel;
     
+    LoginController lController = new LoginController();
     
     @FXML
     private void handleButtonPlay(ActionEvent event) throws IOException {
@@ -56,6 +57,8 @@ public class MainController implements Initializable {
      @FXML
     private void handleButtonExit(ActionEvent event) throws IOException {
         Stage stage = (Stage) exit.getScene().getWindow();
+        db.erasePlayerPlaying();
+        
         stage.close();
     }
     
@@ -65,9 +68,13 @@ public class MainController implements Initializable {
         db.connect();
         db.create();
         db.createTables();
-        nivel.setValue("easy");
-        nivel.getItems().addAll("easy","median","hard");
-           
+        nivel.setValue("Easy");
+        nivel.getItems().addAll("Easy","Medium","Hard");
+        String nome=db.getPlayerPlaying();
+        System.out.println("Player playing: "+nome);
+        
+        playerName.setText(nome);
+        
     }    
     
 }

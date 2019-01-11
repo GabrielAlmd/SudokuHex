@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 
 /*
@@ -33,7 +34,7 @@ public class DBHelper {
     
     String TABLE_NAME2 = "Jogador";
     String COLUMN2_USER = "USER";
-    String COLUMN2_COMP= "COMP";
+    //String COLUMN2_COMP= "COMP";
     
     DBHelper db;
     
@@ -49,7 +50,7 @@ public class DBHelper {
     
     public void createTables(){
         String criartabela1 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME1 + " ("+ COLUMN1_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN1_PASS+" varchar(56) NOT NULL);";
-        String criartabela2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " ("+ COLUMN2_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN2_COMP+" INTEGER NOT NULL);";
+        String criartabela2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " ("+ COLUMN2_USER +" varchar(56) NOT NULL PRIMARY KEY);"/*, "+COLUMN2_COMP+" INTEGER NOT NULL);"*/;
         
         try (Connection conn = DriverManager.getConnection(path);
             Statement stmt = conn.createStatement()) {
@@ -89,13 +90,12 @@ public class DBHelper {
         return false;
     }
     
-    public Boolean insertJogador(String  nome, int tabFeitos){
-        String inserir = "INSERT INTO " + TABLE_NAME2 + " ("+COLUMN2_USER+","+COLUMN2_COMP+") VALUES(?,?)";
+    public Boolean playerPlaying(String  nome){
+        String inserir = "INSERT INTO " + TABLE_NAME2 + " ("+COLUMN2_USER+") VALUES(?);";
         
         try (Connection conn = DriverManager.getConnection(path);
             PreparedStatement pstmt = conn.prepareStatement(inserir)) {
             pstmt.setString(1,nome);
-            pstmt.setInt(2,tabFeitos);
             return pstmt.executeUpdate()==1; 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -103,9 +103,36 @@ public class DBHelper {
         return false;
     }
     
-    public void eraseTableJogador()
+    public void erasePlayerPlaying()
     {
-        DROP TABLE TABLE_NAME2;
+        String eraseJogador = "DROP TABLE "+TABLE_NAME2+";";
+        
+        try (Connection conn = DriverManager.getConnection(path);
+            Statement stmt = conn.createStatement()) {
+            stmt.execute(eraseJogador);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public String getPlayerPlaying(){
+        String nome = null;
+        
+        try (Connection conn = DriverManager.getConnection(path);
+            Statement stmt = conn.createStatement()) {
+            String sql = "SELECT "+COLUMN2_USER+" FROM "+TABLE_NAME2+";";
+            ResultSet rs = stmt.executeQuery(sql);
+            if(rs.next()){
+                nome = rs.getString(COLUMN2_USER);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+        System.out.println("Nome: "+nome);
+        
+        return nome;
     }
 
      public Boolean connect(){

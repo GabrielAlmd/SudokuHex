@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="586.0" style="-fx-background-color: #1e97b9;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudoku.MainController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="586.0" style="-fx-background-color: #1e97b9;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudoku.MainController">
    <children>
       <VBox alignment="CENTER" prefHeight="480.0" prefWidth="147.0" style="-fx-background-color: #1e97b9;" HBox.hgrow="ALWAYS">
          <HBox.margin>
@@ -23,7 +23,7 @@
                   <Insets />
                </VBox.margin>
             </Label>
-            <Label fx:id="player" text="Player">
+            <Label fx:id="playerName" text="Player">
                <font>
                   <Font name="Bebas" size="24.0" />
                </font>

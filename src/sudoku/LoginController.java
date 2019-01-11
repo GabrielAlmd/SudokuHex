@@ -30,7 +30,7 @@ public class LoginController implements Initializable {
     DBHelper db = new DBHelper();
     
     @FXML
-    private TextField user; //user login
+    public TextField user; //user login
     @FXML
     private PasswordField password; //pass login
     @FXML
@@ -48,7 +48,7 @@ public class LoginController implements Initializable {
     @FXML
     private Label erro2; //lb1 registo
     
-   
+
     
     
     private boolean checkPassEqual(String um, String dois){
@@ -59,16 +59,16 @@ public class LoginController implements Initializable {
     private void handleButtonCkUser(ActionEvent event) throws IOException {
        if(!user.getText().isEmpty() && !password.getText().isEmpty()){
             if(db.logIn(user.getText(), password.getText())){
-                
+                db.playerPlaying(user.getText());
                 Parent root = FXMLLoader.load(getClass().getResource("Main.fxml")); //muda para a proxima janela
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 
             } else
-                erro.setText("Wrong user or pass!!\nTry registering first.");
+                erro.setText("Wrong user or password!!\nTry registering first.");
         } else
-            erro.setText("Fill all camps!");
+            erro.setText("You must insert a username and a password!");
     }
     
     @FXML
@@ -77,7 +77,7 @@ public class LoginController implements Initializable {
             if(!checkPassEqual( r_password.getText(), r_cpassword.getText())){
                 r_password.clear();
                 r_cpassword.clear();
-                erro2.setText("Password don't match!");
+                erro2.setText("Passwords don't match!");
             }
             else{
                 if(db.insertPlayer(r_user.getText(),r_password.getText().toString())){
@@ -89,7 +89,7 @@ public class LoginController implements Initializable {
             }
         }
         else{
-            erro2.setText("Fill all camps!");
+            erro2.setText("You must complete all fields!");
         }
     }
     
@@ -101,5 +101,7 @@ public class LoginController implements Initializable {
         
            
     }    
+   
+    
     
 }
