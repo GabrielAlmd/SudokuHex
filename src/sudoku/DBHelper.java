@@ -31,6 +31,12 @@ public class DBHelper {
     String COLUMN1_USER = "USER";
     String COLUMN1_PASS= "PASS";
     
+    String TABLE_NAME2 = "Jogador";
+    String COLUMN2_USER = "USER";
+    String COLUMN2_COMP= "COMP";
+    
+    DBHelper db;
+    
     public void create(){
          try (Connection conn = DriverManager.getConnection(path)) {
             if (conn != null) {
@@ -42,11 +48,13 @@ public class DBHelper {
     }
     
     public void createTables(){
-        String criartabela = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME1 + " ("+ COLUMN1_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN1_PASS+" varchar(56) NOT NULL);";
+        String criartabela1 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME1 + " ("+ COLUMN1_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN1_PASS+" varchar(56) NOT NULL);";
+        String criartabela2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " ("+ COLUMN2_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN2_COMP+" INTEGER NOT NULL);";
         
         try (Connection conn = DriverManager.getConnection(path);
             Statement stmt = conn.createStatement()) {
-            stmt.execute(criartabela);
+            stmt.execute(criartabela1);
+            stmt.execute(criartabela2);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -74,13 +82,30 @@ public class DBHelper {
             PreparedStatement pstmt = conn.prepareStatement(inserir)) {
             pstmt.setString(1,nome);
             pstmt.setString(2,pass);
-            if(pstmt.executeUpdate()==1)
-                return true;
-            return false; 
+            return pstmt.executeUpdate()==1; 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
         return false;
+    }
+    
+    public Boolean insertJogador(String  nome, int tabFeitos){
+        String inserir = "INSERT INTO " + TABLE_NAME2 + " ("+COLUMN2_USER+","+COLUMN2_COMP+") VALUES(?,?)";
+        
+        try (Connection conn = DriverManager.getConnection(path);
+            PreparedStatement pstmt = conn.prepareStatement(inserir)) {
+            pstmt.setString(1,nome);
+            pstmt.setInt(2,tabFeitos);
+            return pstmt.executeUpdate()==1; 
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+    
+    public void eraseTableJogador()
+    {
+        DROP TABLE TABLE_NAME2;
     }
 
      public Boolean connect(){
