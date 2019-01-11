@@ -70,14 +70,14 @@ public class PlayController implements Initializable {
 
 		context.clearRect(0, 0, 450, 450);
 		// draw white rounded rectangles for our board
-		for(int row = 0; row<9; row++) {
-			for(int col = 0; col<9; col++) {
+		for(int row = 0; row<60; row++) {
+			for(int col = 0; col<12; col++) {
 				// finds the y position of the cell, by multiplying the row number by 50, which is the height of a row in pixels
 				// then adds 2, to add some offset
-				int position_y = row * 50 + 2;
+				int position_y = row * 50 + 4;
 				// finds the x position of the cell, by multiplying the column number by 50, which is the width of a column in pixels
 				// then add 2, to add some offset
-				int position_x = col * 50 + 2;
+				int position_x = col * 50 + 4;
 				// defines the width of the square as 46 instead of 50, to account for the 4px total of blank space caused by the offset
 				// as we are drawing squares, the height is going to be the same
 				int width = 46;
@@ -99,8 +99,8 @@ public class PlayController implements Initializable {
 
 		// draw the initial numbers from our GameBoard instance
 		 int[][] initial = gameboard.getInitial();
-		for(int row = 0; row<9; row++) {
-			for(int col = 0; col<9; col++) {
+		for(int row = 0; row<12; row++) {
+			for(int col = 0; col<12; col++) {
 				// finds the y position of the cell, by multiplying the row number by 50, which is the height of a row in pixels
 				// then adds 2, to add some offset
 				int position_y = row * 50 + 30;
@@ -121,8 +121,8 @@ public class PlayController implements Initializable {
 
 		// draw the players numbers from our GameBoard instance
 				 int[][] player = gameboard.getPlayer();
-				for(int row = 0; row<9; row++) {
-					for(int col = 0; col<9; col++) {
+				for(int row = 0; row<12; row++) {
+					for(int col = 0; col<12; col++) {
 						// finds the y position of the cell, by multiplying the row number by 50, which is the height of a row in pixels
 						// then adds 2, to add some offset
 						int position_y = row * 50 + 30;
