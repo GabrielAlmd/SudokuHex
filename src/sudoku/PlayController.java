@@ -35,6 +35,13 @@ public class PlayController implements Initializable {
 	@FXML Button button_seven;
 	@FXML Button button_eight;
 	@FXML Button button_nine;
+        @FXML Button button_zero;
+        @FXML Button button_a;
+        @FXML Button button_b;
+        @FXML Button button_c;
+        @FXML Button button_d;
+        @FXML Button button_e;
+        @FXML Button button_f;
 	@FXML Canvas canvas;
 
 	// Make a new GameBoard declaration
@@ -257,6 +264,41 @@ public class PlayController implements Initializable {
 	 */
 	public void buttonNinePressed() {
 		gameboard.modifyPlayer(9, player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+        
+        public void buttonZeroPressed() {
+		gameboard.modifyPlayer(0, player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+        
+        public void buttonAPressed() {
+		gameboard.modifyPlayer('A', player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+        
+        public void buttonBPressed() {
+		gameboard.modifyPlayer('B', player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+        
+        public void buttonCPressed() {
+		gameboard.modifyPlayer('C', player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+        
+        public void buttonDPressed() {
+		gameboard.modifyPlayer('D', player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+        
+         public void buttonEPressed() {
+		gameboard.modifyPlayer('E', player_selected_row, player_selected_col);
+		drawOnCanvas(canvas.getGraphicsContext2D());
+	}
+         
+          public void buttonFPressed() {
+		gameboard.modifyPlayer('F', player_selected_row, player_selected_col);
 		drawOnCanvas(canvas.getGraphicsContext2D());
 	}
 }
