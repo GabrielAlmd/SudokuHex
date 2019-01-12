@@ -25,8 +25,16 @@ import javafx.stage.Stage;
  */
 public class PlayController implements Initializable {
     
+    public String d;
+    
     @FXML
     private Label L1;
+    
+    @FXML
+    private Label L2;
+    
+    @FXML
+    private Label L3;
    
     @FXML
     private void handleButtonGiveup(ActionEvent event) throws IOException {
@@ -38,11 +46,108 @@ public class PlayController implements Initializable {
     
     
     @FXML
-    private void ButDigit(ActionEvent e) {
+    private void handleButtonInput(ActionEvent e) {
         Button b =(Button)e.getSource();
-        String d = b.getText();
+        d = b.getText();
+    }
+    
+    @FXML
+    private void fillLabel1(ActionEvent e) {
         L1.setText(d);
     }
+    @FXML
+    private void fillLabel2(ActionEvent e) {
+        L2.setText(d);
+    }
+    @FXML
+    private void fillLabel3(ActionEvent e) {
+        L3.setText(d);
+    }
+    @FXML
+    private void fillLabel4(ActionEvent e) {
+        L4.setText(d);
+    }
+    @FXML
+    private void fillLabel5(ActionEvent e) {
+        L5.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    @FXML
+    private void fillLabel1(ActionEvent e) {
+        L1.setText(d);
+    }
+    
     
     
     @Override
