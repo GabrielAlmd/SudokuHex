@@ -93,10 +93,10 @@ public class GameBoard {
 		// this way we avoid intersections between the two
 		if (initial[row][col] == 0) {
 
-			if(val >=0 && val <= 12) // only values from 0 to 9 inclusive are permitted
-				player[row][col] = val;
+			if((val >=0 && val <= 9) ) // only values from 0 to 9 inclusive are permitted
+                            player[row][col] = val;
 			else // print out an error message
-				System.out.println("Value passed to player falls out of range");
+                            System.out.println("Value passed to player falls out of range");
 		}
 
 	}

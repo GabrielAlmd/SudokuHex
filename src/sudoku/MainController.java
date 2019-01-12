@@ -44,7 +44,7 @@ public class MainController implements Initializable {
     @FXML
     private ChoiceBox<String> nivel;
     
-    LoginController lController = new LoginController();
+    PlayController lController = new PlayController();
     
     @FXML
     private void handleButtonPlay(ActionEvent event) throws IOException {

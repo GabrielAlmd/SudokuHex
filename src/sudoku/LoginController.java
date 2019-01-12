@@ -59,6 +59,7 @@ public class LoginController implements Initializable {
     private void handleButtonCkUser(ActionEvent event) throws IOException {
        if(!user.getText().isEmpty() && !password.getText().isEmpty()){
             if(db.logIn(user.getText(), password.getText())){
+                
                 db.playerPlaying(user.getText());
                 Parent root = FXMLLoader.load(getClass().getResource("Main.fxml")); //muda para a proxima janela
                 Node node = (Node) event.getSource();
@@ -99,7 +100,7 @@ public class LoginController implements Initializable {
         db.create();
         db.createTables();
         
-           
+            
     }    
    
     
