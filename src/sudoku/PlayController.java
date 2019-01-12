@@ -630,4 +630,9 @@ public class PlayController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
+    
+    public void buttonInfoPressed() {
+        
+    
+    }
 }
