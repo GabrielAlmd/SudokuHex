@@ -15,6 +15,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -23,7 +25,8 @@ import javafx.stage.Stage;
  */
 public class PlayController implements Initializable {
     
-    
+    @FXML
+    private Label L1;
    
     @FXML
     private void handleButtonGiveup(ActionEvent event) throws IOException {
@@ -32,6 +35,15 @@ public class PlayController implements Initializable {
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setScene(new Scene(root));
     }
+    
+    
+    @FXML
+    private void ButDigit(ActionEvent e) {
+        Button b =(Button)e.getSource();
+        String d = b.getText();
+        L1.setText(d);
+    }
+    
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {

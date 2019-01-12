@@ -58,7 +58,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="Label">
+                  <Label fx:id="L1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white;" text="Label">
                      <font>
                         <Font name="Bebas" size="12.0" />
                      </font>
@@ -2117,7 +2117,7 @@
          <children>
             <HBox alignment="CENTER">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="0">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="0">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2125,7 +2125,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="1">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="1">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2133,7 +2133,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="2">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="2">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2141,43 +2141,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="3">
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Bebas" size="12.0" />
-                     </font>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER">
-               <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="4">
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Bebas" size="12.0" />
-                     </font>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="5">
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Bebas" size="12.0" />
-                     </font>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="6">
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Bebas" size="12.0" />
-                     </font>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="7">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="3">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2189,7 +2153,7 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="8">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="4">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2197,7 +2161,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="9">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="5">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2205,7 +2169,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="A">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="6">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2213,7 +2177,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="B">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="7">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2225,7 +2189,7 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="C">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="8">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2233,7 +2197,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="D">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="9">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2241,7 +2205,7 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="E">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="A">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -2249,7 +2213,43 @@
                         <Font name="Bebas" size="12.0" />
                      </font>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="F">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="B">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Bebas" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="C">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Bebas" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="D">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Bebas" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="E">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Bebas" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#ButDigit" prefHeight="20.0" prefWidth="70.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="F">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
