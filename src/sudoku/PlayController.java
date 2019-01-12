@@ -5,18 +5,25 @@
  */
 package sudoku;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 /**
  *
@@ -614,4 +621,13 @@ public class PlayController implements Initializable {
 		gameboard.modifyPlayer('F', player_selected_row, player_selected_col);
 		drawOnCanvas(canvas.getGraphicsContext2D());
 	}
+        
+        
+    @FXML
+    private void handleButtonGiveUp(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml")); //muda para a proxima janela
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setScene(new Scene(root));
+    }
 }

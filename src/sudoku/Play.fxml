@@ -13,7 +13,7 @@
          <children>
             <Canvas fx:id="canvas" height="800.0" onMouseClicked="#canvasMouseClicked" width="850.0">
                <VBox.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin></Canvas>
          </children>
          <HBox.margin>
@@ -191,7 +191,7 @@
                         <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="20.0" prefWidth="80.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="GIVE UP">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonGiveUp" prefHeight="20.0" prefWidth="80.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="GIVE UP">
                      <font>
                         <Font name="Bebas" size="12.0" />
                      </font>

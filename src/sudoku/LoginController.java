@@ -60,7 +60,7 @@ public class LoginController implements Initializable {
        if(!user.getText().isEmpty() && !password.getText().isEmpty()){
             if(db.logIn(user.getText(), password.getText())){
                 
-                db.playerPlaying(user.getText());
+                db.playerPlaying(user.getText(),1);
                 Parent root = FXMLLoader.load(getClass().getResource("Main.fxml")); //muda para a proxima janela
                 Node node = (Node) event.getSource();
                 Stage stage = (Stage) node.getScene().getWindow();
