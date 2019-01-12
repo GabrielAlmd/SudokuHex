@@ -14,15 +14,19 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -633,6 +637,27 @@ public class PlayController implements Initializable {
     
     public void buttonInfoPressed() {
         
-    
+        Stage popupwindow=new Stage();
+      
+        popupwindow.initModality(Modality.APPLICATION_MODAL);
+        popupwindow.setTitle("Info");
+
+        Label label1= new Label("Letter and corespunding numbers:\nA -> 65\nB -> 66\nC -> 67\nD -> 68\nE -> 69\nF -> 70\n");
+
+        Button button1= new Button("Tanks");
+
+        button1.setOnAction(e -> popupwindow.close());
+
+        VBox layout= new VBox(5);
+
+        layout.getChildren().addAll(label1, button1);
+
+        layout.setAlignment(Pos.CENTER);
+
+        Scene scene1= new Scene(layout, 300, 250);
+      
+        popupwindow.setScene(scene1);
+      
+        popupwindow.showAndWait();
     }
 }
