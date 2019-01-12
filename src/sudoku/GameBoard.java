@@ -21,40 +21,53 @@ public class GameBoard {
 	public GameBoard() {
 		solution = new int[][]
 		{
-			{5,3,8,4,6,1,7,9,2,0,0,0},
-			{6,9,7,3,2,5,8,1,4,0,0,0},
-			{2,1,4,7,8,9,5,6,3,0,0,0},
-			{9,4,1,2,7,8,6,3,5,0,0,0},
-			{7,6,2,1,5,3,9,4,8,0,0,0},
-			{8,5,3,9,4,6,1,2,7,0,0,0},
-			{3,8,9,5,1,2,4,7,6,0,0,0},
-			{4,2,6,8,9,7,3,5,1,0,0,0},
-			{1,7,5,6,3,4,2,8,9,0,0,0},
-                        {4,2,6,8,9,7,3,5,1,0,0,0},
-                        {4,2,6,8,9,7,3,5,1,0,0,0},
-                        {4,2,6,8,9,7,3,5,1,0,0,0}
+			{5,3,8,4,6,1,7,9,2,12,12,12,12,12,12,12},
+			{6,9,7,3,2,5,8,1,4,12,12,12,12,12,12,12},
+			{2,1,4,7,8,9,5,6,3,12,12,12,12,12,12,12},
+			{9,4,1,2,7,8,6,3,5,12,12,12,12,12,12,12},
+			{7,6,2,1,5,3,9,4,8,12,12,12,12,12,12,12},
+			{8,5,3,9,4,6,1,2,7,12,12,12,12,12,12,12},
+			{3,8,9,5,1,2,4,7,6,12,12,12,12,12,12,12},
+			{4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+			{1,7,5,6,3,4,2,8,9,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12},
+                        {4,2,6,8,9,7,3,5,1,12,12,12,12,12,12,12}
 		};
 
 		// 0's will be rendered as empty space and will be editable by player
 		initial = new int[][]
 		{
-			{0,0,0,4,0,0,0,9,0,0,0,0},
-			{6,0,7,0,0,0,8,0,4,0,0,0},
-			{0,1,0,7,0,9,0,0,3,0,0,0},
-			{9,0,1,0,7,0,0,3,0,0,0,0},
-			{0,0,2,0,0,0,9,0,0,0,0,0},
-			{0,5,0,0,4,0,1,0,7,0,0,0},
-			{3,0,0,5,0,2,0,7,0,0,0,0},
-			{4,0,6,0,0,0,3,0,1,0,0,0},
-			{0,7,0,0,0,4,0,0,0,0,0,0},
-                        {4,0,6,0,0,0,3,0,1,0,0,0},
-                        {4,0,6,0,0,0,3,0,1,0,0,0},
-                        {4,0,6,0,0,0,3,0,1,0,0,0}
+			{12,12,12,4,12,12,12,9,12,12,12,12,12,12,12,12},
+			{6,12,7,12,12,12,8,12,4,12,12,12,12,12,12,12},
+			{12,1,12,7,12,9,12,12,3,12,12,12,12,12,12,12},
+			{9,12,1,12,7,12,12,3,12,12,12,12,12,12,12,12},
+			{12,12,2,12,12,12,9,12,12,12,12,12,12,12,12,12},
+			{12,5,12,12,4,12,1,12,7,12,12,12,12,12,12,12},
+			{3,12,12,5,12,2,12,7,12,12,12,12,12,12,12,12},
+			{4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+			{12,7,12,12,12,4,12,12,12,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12},
+                        {4,12,6,12,12,12,3,12,1,12,12,12,12,12,12,12}
 
 		};
 
 		// player's array is initialized as a 9x9 full of zeroes
-		player = new int[12][12];
+		player = new int[16][16];
+                for(int i=0;i<16;i++){
+                    for(int k=0;k<16;k++){
+                        player[i][k]=12;
+                    }
+                }
 	}
 
 	/***
@@ -91,7 +104,7 @@ public class GameBoard {
 		// check if the initial array has a zero (treated as empty square)
 		// in the position we want to put in a number in the player array
 		// this way we avoid intersections between the two
-		if (initial[row][col] == 0) {
+		if (initial[row][col] == 12) {
 
 			if((val >=0 && val <= 9) ) // only values from 0 to 9 inclusive are permitted
                             player[row][col] = val;
@@ -106,12 +119,12 @@ public class GameBoard {
 	 * @return true if player solution matches original solution, false if not
 	 */
 	public boolean checkForSuccess() {
-		for(int row = 0; row<9; row++) {
-			for(int col = 0; col<12; col++) {
+		for(int row = 0; row<16; row++) {
+			for(int col = 0; col<16; col++) {
 
 				// if the value in the initial array is zero, which means
 				// the player has to input a value in the square
-				if(initial[row][col] == 0) {
+				if(initial[row][col] == 12) {
 
 					// check if the player value corresponds to the solution value
 					// and if it doesn't:
@@ -137,12 +150,12 @@ public class GameBoard {
 	public boolean checkForSuccessGeneral() {
 		// combine the initial and player arrays
 		// instantiate a 9x9 array filled with 0's;
-		int[][] combined = new int[12][12];
+		int[][] combined = new int[16][16];
 		// fill it up with the combination of initial number and player answers
-		for(int row = 0; row < 12; row++) {
-			for(int col = 0; col <12; col++) {
+		for(int row = 0; row < 16; row++) {
+			for(int col = 0; col <16; col++) {
 				// if there's a valid number in the initial array
-				if(initial[row][col]!=0) {
+				if(initial[row][col]!=12) {
 					// add it at the same position in the combined one
 					combined[row][col] = initial[row][col];
 					// if there isn't
@@ -154,11 +167,11 @@ public class GameBoard {
 		}
 		// check if the sum of the numbers in each row is 
 		// equal to 45 (the sum of numbers from 1 to 9)
-		for(int row = 0; row<12; row++) {
+		for(int row = 0; row<16; row++) {
 			//for that row, create a sum variable
 			int sum = 0;
 			// add all the numbers from a row
-			for(int col = 0; col<12; col++) {
+			for(int col = 0; col<16; col++) {
 				sum = sum + combined[row][col];
 			}
 			// if the sum isn't 45, then the row is invalid, invalidating the whole solution
@@ -169,11 +182,11 @@ public class GameBoard {
 		
 		// check if the sum of the numbers in each column is
 		// equal to 45 (the sum of numbers from 1 to 9)
-		for(int col = 0; col<12; col++) { // note that the for loops are switched around
+		for(int col = 0; col<16; col++) { // note that the for loops are switched around
 			//for that column, create a sum variable
 			int sum = 0;
 			// add all the numbers from a column
-			for(int row = 0; row<12; row++) {
+			for(int row = 0; row<16; row++) {
 				sum = sum + combined[row][col];
 			}
 			// if the sum isn't 45, then the column is invalid, invalidating the whole solution
@@ -187,9 +200,9 @@ public class GameBoard {
 		// we are going to create an offset of 3 squares for each check
 		
 		// increment the row offset with 3 each time
-		for (int row_offset = 0; row_offset < 12; row_offset+=4) { 
+		for (int row_offset = 0; row_offset < 16; row_offset+=4) { 
 			// increment the col offset with 3 each time
-			for(int col_offset = 0; col_offset <12; col_offset+=4) { 
+			for(int col_offset = 0; col_offset <16; col_offset+=4) { 
 				// for each 3x3 cluster, create a sum variable
 				int sum = 0;
 				// add all numbers from a cluster of 3x3
