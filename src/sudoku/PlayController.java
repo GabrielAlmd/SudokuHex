@@ -15,8 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 /**
@@ -38,11 +36,6 @@ public class PlayController implements Initializable {
     public String d;
     
     
-    @FXML
-    private void handleButtonInput(ActionEvent e) {
-        Button b =(Button)e.getSource();
-        d = b.getText();
-    }
     
     
     
