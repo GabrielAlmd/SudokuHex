@@ -62,7 +62,7 @@ public class MainController implements Initializable {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setScene(new Scene(root));
-        stage.setResizable(false);
+        //stage.setResizable(false);
 
         
         System.out.println("Nivel "+nivel.getValue());
