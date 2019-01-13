@@ -46,10 +46,26 @@ public class MainController implements Initializable {
     
     @FXML
     private void handleButtonPlay(ActionEvent event) throws IOException {
+        
+        if(nivel.getValue().equals("Easy")){
+            System.out.println("A mudar a dificuldade para Easy");
+            db.setPlayerLVL(1);
+        }else if(nivel.getValue().equals("Medium")){
+            System.out.println("A mudar a dificuldade para Medium");
+            db.setPlayerLVL(2);
+        }else if(nivel.getValue().equals("Hard")){
+            System.out.println("A mudar a dificuldade para Hard");
+            db.setPlayerLVL(3);
+        }
+                
         Parent root = FXMLLoader.load(getClass().getResource("Play.fxml")); //muda para a proxima janela
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
+
+        
+        System.out.println("Nivel "+nivel.getValue());
     }
     
      @FXML
@@ -70,6 +86,8 @@ public class MainController implements Initializable {
         nivel.getItems().addAll("Easy","Medium","Hard");
         String nome=db.getPlayerPlaying();
         System.out.println("Player playing: "+nome);
+
+        
         
         playerName.setText(nome);
         

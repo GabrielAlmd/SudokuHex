@@ -76,6 +76,9 @@ public class PlayController implements Initializable {
 		// default player celected cell integers to 0;
 		player_selected_row = 0;
 		player_selected_col = 0;
+               
+                
+                
 	}
 
 	/***
@@ -86,7 +89,7 @@ public class PlayController implements Initializable {
 	 */
 	public void drawOnCanvas(GraphicsContext context) {
 
-		context.clearRect(0, 0, 1800, 1800);
+		context.clearRect(0, 0, 850, 800);
 		// draw white rounded rectangles for our board
 		for(int row = 0; row<4; row++) {
 			for(int col = 0; col<4; col++) {
@@ -480,11 +483,11 @@ public class PlayController implements Initializable {
 					// clear the canvas
 					context.clearRect(0, 0, 800, 800);
 					// set the fill color to green
-					context.setFill(Color.GREEN);
+					context.setFill(Color.BLACK);
 					// set the font to 36pt
 					context.setFont(new Font(36));
 					// display SUCCESS text on the screen
-					context.fillText("SUCCESS!", 150, 250);
+					context.fillText("SUCCESS!", 425, 400);
 				}
 
 
@@ -638,13 +641,15 @@ public class PlayController implements Initializable {
     public void buttonInfoPressed() {
         
         Stage popupwindow=new Stage();
+        
+        popupwindow.setResizable(false);
       
         popupwindow.initModality(Modality.APPLICATION_MODAL);
         popupwindow.setTitle("Info");
 
-        Label label1= new Label("Letter and corespunding numbers:\nA -> 65\nB -> 66\nC -> 67\nD -> 68\nE -> 69\nF -> 70\n");
+        Label label1= new Label("Letter and corresponding numbers:\nA -> 65\nB -> 66\nC -> 67\nD -> 68\nE -> 69\nF -> 70\n");
 
-        Button button1= new Button("Tanks");
+        Button button1= new Button("Thanks");
 
         button1.setOnAction(e -> popupwindow.close());
 

@@ -50,7 +50,7 @@ public class DBHelper {
     
     public void createTables(){
         String criartabela1 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME1 + " ("+ COLUMN1_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN1_PASS+" varchar(56) NOT NULL);";
-        String criartabela2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " ("+ COLUMN2_USER +" varchar(56) NOT NULL PRIMARY KEY);"+COLUMN2_LVL+" INTEGER NOT NULL);";
+        String criartabela2 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME2 + " ("+ COLUMN2_USER +" varchar(56) NOT NULL PRIMARY KEY, "+COLUMN2_LVL+" INTEGER NOT NULL);";
         
         try (Connection conn = DriverManager.getConnection(path);
             Statement stmt = conn.createStatement()) {
@@ -91,7 +91,7 @@ public class DBHelper {
     }
     
     public Boolean playerPlaying(String  nome, int level){
-        String inserir = "INSERT INTO " + TABLE_NAME2 +" ("+COLUMN2_USER+","+COLUMN2_LVL+") VALUES(?,?)";
+        String inserir = "INSERT INTO " + TABLE_NAME2 +" ("+COLUMN2_USER+","+COLUMN2_LVL+") VALUES(?,?);";
         
         try (Connection conn = DriverManager.getConnection(path);
             PreparedStatement pstmt = conn.prepareStatement(inserir)) {
@@ -135,6 +135,39 @@ public class DBHelper {
         System.out.println("Nome: "+nome);
         
         return nome;
+    }
+    
+    public boolean setPlayerLVL(int lvl){
+        try (Connection conn = DriverManager.getConnection(path);
+            Statement stmt = conn.createStatement()) {
+            String sql = "UPDATE "+TABLE_NAME2+" SET "+COLUMN2_LVL+"="+lvl+";";
+            ResultSet rs = stmt.executeQuery(sql);            
+        } catch (SQLException e) {
+            System.out.println("Erro setplayer");
+            System.out.println(e.getMessage());
+        }
+        
+   
+        return true;
+    }
+    
+    public int getPlayerLVL(){
+        int lvl=0;
+        try (Connection conn = DriverManager.getConnection(path);
+            Statement stmt = conn.createStatement()) {
+            String sql = "SELECT "+COLUMN2_LVL+" FROM "+TABLE_NAME2+";";
+            ResultSet rs = stmt.executeQuery(sql);
+            if(rs.next()){
+                lvl = rs.getInt(COLUMN2_LVL);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Errro getPlayer");
+            System.out.println(e.getMessage());
+        }
+        
+        System.out.println("Level: "+lvl);
+        return lvl;
     }
 
      public Boolean connect(){
