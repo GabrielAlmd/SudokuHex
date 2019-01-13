@@ -27,7 +27,12 @@ import javafx.stage.Stage;
 
 public class PlayController implements Initializable {
     
-        public int start = 0;
+        public int start = 1;
+        public int count = 0;
+        
+        @FXML Label time; 
+        @FXML Button btpause; 
+        @FXML Button btstart; 
         
 	@FXML Button button_one; 
 	@FXML Button button_two;
@@ -65,8 +70,14 @@ public class PlayController implements Initializable {
 		
 		player_selected_row = 0;
 		player_selected_col = 0;
-               
                 
+                
+               start =1;
+               
+               canvas.setVisible(false);
+               
+                   
+               
                 
 	}
 
@@ -410,14 +421,27 @@ public class PlayController implements Initializable {
     
     @FXML
     private void handleButtonPause (ActionEvent event) throws IOException {
+        
+        
         if(start == 0){
             start = 1;
             canvas.setVisible(false);
+            btpause.setText("Resume");
         }else{
             start = 0;
+            btstart.setVisible(false);
             canvas.setVisible(true);
+            btpause.setText("Pause");
         }
     }
+    
+    @FXML
+    private void handleButtonStart(ActionEvent event) throws IOException {
+        start = 0;
+        btstart.setVisible(false);
+        canvas.setVisible(true);
+    }
+    
     
     public void buttonInfoPressed() {
         
