@@ -29,7 +29,15 @@
          <children>
             <HBox alignment="BOTTOM_RIGHT" prefHeight="31.0" prefWidth="394.0">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="46.0" onMouseClicked="#buttonInfoPressed" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="69.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@sudoku.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="40.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <ImageView fitHeight="27.0" fitWidth="37.0" onMouseClicked="#buttonInfoPressed" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@QuestionMark.png" />
                      </image>
@@ -200,7 +208,7 @@
             </HBox>
             <HBox alignment="CENTER">
                <children>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="Pause">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonPause" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: white; -fx-background-radius: 0px;" text="Pause">
                      <font>
                         <Font name="Bebas" size="18.0" />
                      </font>
